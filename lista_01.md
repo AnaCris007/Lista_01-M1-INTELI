@@ -37,7 +37,7 @@ c) Substituir if (a || b === 0) por if (a && b === 0)
 
 d) Remover completamente a verificação if (a || b === 0)
 
-**Justificativa:** O código if (a || b === 0) não faz sentido lógico, pois ele não avalia se a ou b é igual a 0. Ela é interpretada assim if (a || (b === 0)), ou seja, como o operador de igualdade (===) tem prioridade ele é avaliado primeiro. Desse modo, o código verifica se b é igual a 0 e retorna true ou false, dependendo do valor atribuido a b, e só depois ele verifica com o valor de a. Se a não for uma string vazia, 0, null ou undefined, ele será considerado como true e se for alguma das opções citadas ele será considerado como false. Assim as verificações que esse código faz de fato são: if (true || true), if (true|| false) e if (false || false). Se for if (true || true) ou if (true|| false) o código retorna o que está dentro do if, no caso "Erro: número inválido", se for if (false || false) o código retorna o que está dentro do else if, ou seja, a + b. Para verificar corretamente se o valor de a é igual a 0 ou se o valor de b é igual a 0 o correto seria **if (a === 0 || b === 0)**.
+**Justificativa:** O código if (a || b === 0) não faz sentido lógico, pois ele não avalia se 'a' ou 'b' é igual a 0. Ele é interpretado assim if (a || (b === 0)), ou seja, como o operador de igualdade (===) tem prioridade ele é avaliado primeiro. Desse modo, o código verifica se 'b' é igual a 0 e retorna true ou false, dependendo do valor atribuido a 'b', e só depois ele verifica com o valor de 'a'. Se 'a' não for uma string vazia, 0, null ou undefined, ele será considerado como true e se for alguma das opções citadas ele será considerado como false. Assim as verificações que esse código faz de fato são: if (true || true), if (true|| false) e if (false || false). Se for if (true || true) ou if (true|| false) o código retorna o que está dentro do if, no caso "Erro: número inválido", se for if (false || false) o código retorna o que está dentro do else if, ou seja, a + b. Para verificar corretamente se o valor de 'a' é igual a 0 ou se o valor de 'b' é igual a 0 o correto seria **if (a === 0 || b === 0)**.
 ______
 **3) Ao executar esse código, qual será a saída no console? Indique a alternativa correta e justifique sua resposta.**
 ```javascript
@@ -71,8 +71,8 @@ c) O código imprime 50.
 
 d) O código gera um erro.
 
-**Justificativa:** O código imprime **200**, pois, embora o argumento passado para a função tenha sido "eletrônico", que inicialmente define a variável preco como 1000, não há um comando break nesse case. Sem o break, a execução continua até o próximo case, que no caso é o "vestuário", em que a variável preco é redefinida para 200. Depois disso há um break que interrompe a execução do switch e retorna o valor atualizado da variável de preco, que agora é 200.
-__
+**Justificativa:** O código imprime **200**, pois, embora o argumento passado para a função tenha sido "eletrônico", que inicialmente define a variável preco como 1000, não há um comando break nesse case. Sem o break, a execução continua até o próximo case, que no caso é o "vestuário", em que a variável preco é redefinida para 200. Depois disso, há um break que interrompe a execução do switch e retorna o valor atualizado da variável de preco, que agora é 200.
+______
 **4) Ao executar esse código, qual será a saída no console? Indique a alternativa correta e justifique sua resposta.**
 ```javascript
 let numeros = [1, 2, 3, 4, 5];
@@ -107,7 +107,7 @@ b) ["banana", "abacaxi", "manga"]
 
 d) ["banana", "maçã", "uva", "abacaxi", "manga"]
 
-**Justificativa:** O conteúdo do array lista após a execução do código será  **["banana", "abacaxi", "manga", "laranja"]**, pois o método splice() permite modificar uma lista com a remoção e adição de novos itens. O primeiro parâmetro, no caso o número 1, determina o índice inicial em que se iniciará a remoção de itens da lista. O segundo parâmetro, no caso o número 2, determina quantos itens serão  removidos da lista a partir do índice 2. Por fim, "abacaxi" e "manga" representam os novos itens da lista que serão adicionados no lugar de "maça" e "uva".
+**Justificativa:** O conteúdo do array lista após a execução do código será  **["banana", "abacaxi", "manga", "laranja"]**, pois o método splice() permite modificar uma lista com a remoção e adição de novos itens. O primeiro parâmetro, no caso o número 1, determina o índice em que se iniciará a remoção de itens da lista. O segundo parâmetro, no caso o número 2, determina quantos itens serão  removidos da lista a partir do índice 1. Por fim, "abacaxi" e "manga" representam os novos itens da lista que serão adicionados nessa ordem no lugar de "maça" e "uva".
 ______
 **6) Abaixo há duas afirmações sobre herança em JavaScript. Indique a alternativa correta e justifique sua resposta**
 
@@ -208,7 +208,7 @@ onibus.tamanho(); // Saída: "Ônibus são grandes"
 No exemplo anexado, a classe Onibus e Carro possuem o mesmo método, mas o objeto pertencente a cada classe chama o seu método correspondente. Por outro lado, a razão é falsa, pois o JavaScript não suporta sobrecarga de métodos da mesma forma que outras linguagens. Em JavaScript, se um método com o mesmo nome for definido mais de uma vez dentro da mesma classe, apenas a última definição será considerada. O que o JavaScript suporta é a sobrescrita de métodos (quando uma classe filho redefine um método da classe pai), como ocorre no exemplo.
 
 # Questões dissertativas
-9) O seguinte código deve retornar a soma do dobro dos números de um array, mas contém erros. Identifique os problema e corrija o código para que funcione corretamente. Adicione comentários ao código explicando sua solução para cada problema.
+**9) O seguinte código deve retornar a soma do dobro dos números de um array, mas contém erros. Identifique os problema e corrija o código para que funcione corretamente. Adicione comentários ao código explicando sua solução para cada problema.**
 
 ```javascript
 function somaArray(numeros) {
@@ -234,7 +234,7 @@ function somaArray(numeros) {
 console.log(somaArray([1, 2, 3, 4])); //A saída agora está correta e será 20 nesse caso (2 + 4 + 6 + 8 = 20).
 ```
 ______
-10) Crie um exemplo prático no qual você tenha duas classes:
+**10) Crie um exemplo prático no qual você tenha duas classes:**
 
 - Uma classe `Produto` com atributos `nome` e `preco`, e um método `calcularDesconto()` que aplica um desconto fixo de 10% no preço do produto.
 - Uma classe `Livro` que herda de `Produto` e modifica o método `calcularDesconto()`, aplicando um desconto de 20% no preço dos livros.
